@@ -1,13 +1,13 @@
-import os
-
 def valores_son_iguales(diccionario):
+    valores = list(diccionario.values())
+    elemento = valores[0]
     iguales = True
-    anterior = None
-    for value in diccionario.values():
-        if value == anterior or anterior == None:
-            anterior = value
-        else:
+    
+    for valor in valores:
+        if valor != elemento:
             iguales = False
+        else:
+            elemento = valor
     return iguales
 
 print(valores_son_iguales({"clave1": 1, "clave2": 1, "clave3": 1, "clave4": 1}))
